@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>  
+         
+        body{
+            text-align: center;
+        }
+        .back{
+            background-color:greenyellow;
+            width: 60%;
+            height: 650px;
+            margin-left:300px;
+        }
+        form{
+            margin:30px;
+        }
+        h1{
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: white;
+            font-size:35px;  
+        }
+        h2{
+            color:white;
+
+        }
+        button{
+            margin:5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="back">
+        <h1> 당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다.</h1>
+
+        <br>
+       
+        <button type="button" class="btn btn-outline-primary"> <a href = "{%url 'home'%}">돌아가기</a></button>
+        <br>
+
+        <h2>입력한 텍스트</h2>
+        {{full}}
+        <br><br>
+
+        <h2>단어 카운트</h2>
+        {% for word, howmany in dictionary%}
+        {{word}} : {{howmany}}
+        <br>
+        {%endfor%}
+        <br>
+        <h2>글자의 개수</h2>
+        {{length}}
+<br>
+        </div>
+</body>
+</html>
